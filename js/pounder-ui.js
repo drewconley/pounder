@@ -4,7 +4,7 @@ $(function() {
 		var test = new TestA(
 			{ 
 				duration: 10,
-				domain: 'http://stg.api.famousfootwear.com'
+				domain: 'http://ffapi-node.uc01.clc.af.cm'
 			}
 		);
 	});
