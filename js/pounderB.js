@@ -11,22 +11,21 @@ var TestB = function(options) {
 	lh = new LinkHelper();
 
 	function success(d) {		
-		console.log(d);
-		if (!stop) {
-			setTimeout( base.fireRequest, 10 );
-		} else {
-			console.log("STOP B");
-		}
+		console.log('success!', d);		
 	};
 	function fail(d) {
-		console.log('fail');
+		console.log('fail', d);
 	};
 
 	base.fireRequest = function() {
 
-		var url = lh.getProduct(domain);
-		console.log("hitting: ", url);		
-		$.get(url).then( success, fail );
+		var url = lh.getProduct(domain); //var url = 'test.json';		
+		console.log("hitting: ", url);
+
+		$.get(url).then(success, fail);
+		if (!stop) {
+			setTimeout( base.fireRequest, 10 );
+		}
 	};
 
 	base.init = function() {
