@@ -39,7 +39,7 @@ var TestB = function(options) {
 			$.get(url, {}, function(data, status, xhr) {							
 				xhr.done(function(d) {					
 					var request_time = new Date().getTime() - start_time;
-					console.log(d, request_time, start_time );
+					//console.log(d, request_time, start_time );
 
 					//get new Average
 					responseTimes.push( request_time );
@@ -64,10 +64,10 @@ var TestB = function(options) {
 		    total += this;
 		});		
 		var average = Math.round(total / responseTimes.length);
-		console.log(average);
-		
-		//update DOM
-		//$('#avgResponseTime').text(average);
+		console.log(average)
+
+		//update DOM	
+		$(options.DOMNode).find('.delay').text(average);
 	};
 
 

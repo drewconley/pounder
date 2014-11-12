@@ -8,6 +8,7 @@ var TestA = function(options) {
 
 	//Variables
 	var requestcount = 0;
+	console.log('seconds')
 	var seconds = 0;
 	var responseTimes = [];
 
@@ -29,6 +30,7 @@ var TestA = function(options) {
 			
 			//Update counter
 			requestcount += 1;
+			$(options.DOMNode).find('.count').text(requestcount);
 
 			//Fire again unless time is up
 			if (seconds <= options.duration) {				
@@ -47,8 +49,9 @@ var TestA = function(options) {
 		});		
 		var average = Math.round(total / responseTimes.length);
 		
-		//update DOM
-		$('#avgResponseTime').text(average);
+		//update DOM		
+		$(options.DOMNode).find('.delay').text(average);
+
 	};
 
 	base.finished = function() {

@@ -22,30 +22,31 @@
 var series = [
 	{
 		name: "App Fog | Node",
+		model: 'TestA',
+		duration: 6,
+		domain: 'http://ffapi-node.uc01.clc.af.cm',
+		DOMNode: '#node-testA'
+	},
+	{
+		name: "App Fog | Node",
 		model: 'TestB',
 		duration: 600,
-		domain: 'http://ffapi-node.uc01.clc.af.cm'
-	},
+		domain: 'http://ffapi-node.uc01.clc.af.cm', //domain: 'http://ffapi-node.uc01.clc.af.cm',
+		DOMNode: '#node-testB'
+	},	
+	{
+		name: "App Fog | PHP",
+		model: 'TestA',
+		duration: 6,
+		domain: 'http://ffapi.uc01.clc.af.cm',
+		DOMNode: '#php-testA'
+	},	
 	{
 		name: "App Fog | PHP",
 		model: 'TestB',
 		duration: 600,		
-		domain: 'http://ffapi.uc01.clc.af.cm'
+		domain: 'http://ffapi.uc01.clc.af.cm', //domain: 'http://ffapi.uc01.clc.af.cm',
+		DOMNode: '#php-testB'
 	}
-	// {
-	// 	name: "App Fog | Node",
-	// 	model: 'TestA',
-	// 	duration: 6,
-	// 	domain: 'http://stg.api.famousfootwear.com'
-	// },
-	// {
-	// 	name: "App Fog | PHP",
-	// 	model: 'TestA',
-	// 	duration: 6,
-	// 	domain: 'http://stg.api.famousfootwear.com'
-	// }
-
-
-
 ];
 var camp = new Campaign(series, {});
