@@ -1,17 +1,19 @@
 var TestB = function(options) {
 
 	var base = this;	
-	var requestcount = 0;
-	var stop = false;
-
+	lh = new LinkHelper();
+	
+	//Options
 	var options = options || {};
 	var domain = options.domain || 'http://stg.api.famousfootwear.com'; //default domain to hit
 	var duration = options.duration || 3000; //ms
 
+	//Variables
+	var requestcount = 0;
+	var stop = false;
 
-	//use Link Helper
-	lh = new LinkHelper();
 
+	//local functions
 	function success(d) {				
 		console.log('success!');
 	};
@@ -19,6 +21,7 @@ var TestB = function(options) {
 	function fail(d) {
 		console.log('fail', d);
 	};
+
 
 	base.fireRequest = function() {
 
