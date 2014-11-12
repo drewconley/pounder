@@ -17,11 +17,12 @@ var TestA = function(options) {
 
 	base.fireRequest = function() {
 
-		var url = lh.getProduct(domain);
-		console.log("hitting");
+		
+		console.log("hitting (A)");
 
 		startTime = new Date().getTime();
 
+		var url = lh.getProduct(domain);
 		$.get(url, function(d) {
 
 			//get new Average
@@ -65,7 +66,7 @@ var TestA = function(options) {
 
 			
 			var countMs = function() {
-				if (seconds < 30) { //capping at 30s
+				if (seconds < 90) { //capping at 90s
 					seconds += 1;
 					setTimeout( countMs, 1000 );
 				} else {

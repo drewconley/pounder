@@ -20,33 +20,34 @@
 
 
 var series = [
+
 	{
-		name: "App Fog | Node",
+		name: "Amazon Web A",
 		model: 'TestA',
-		duration: 6,
-		domain: 'http://ffapi-node.uc01.clc.af.cm',
-		DOMNode: '#node-testA'
-	},
-	{
-		name: "App Fog | Node",
-		model: 'TestB',
-		duration: 600,
-		domain: 'http://ffapi-node.uc01.clc.af.cm', //domain: 'http://ffapi-node.uc01.clc.af.cm',
-		DOMNode: '#node-testB'
+		duration: 60, //seconds
+		domain: 'http://ffapi.aws.af.cm',
+		DOMNode: '#zone2-testA'
 	},	
 	{
-		name: "App Fog | PHP",
-		model: 'TestA',
-		duration: 6,
-		domain: 'http://ffapi.uc01.clc.af.cm',
-		DOMNode: '#php-testA'
-	},	
-	{
-		name: "App Fog | PHP",
+		name: "Amazon Web B",
 		model: 'TestB',
-		duration: 600,		
-		domain: 'http://ffapi.uc01.clc.af.cm', //domain: 'http://ffapi.uc01.clc.af.cm',
-		DOMNode: '#php-testB'
+		duration: 10000,		
+		domain: 'http://ffapi.aws.af.cm',
+		DOMNode: '#zone2-testB'
 	}
+	// {
+	// 	name: "App Fog | Node",
+	// 	model: 'TestA',
+	// 	duration: 60, //seconds
+	// 	domain: 'http://ffapi-node.uc01.clc.af.cm',
+	// 	DOMNode: '#zone1-testA'
+	// },
+	// {
+	// 	name: "App Fog | Node",
+	// 	model: 'TestB',
+	// 	duration: 10000,
+	// 	domain: 'http://ffapi-node.uc01.clc.af.cm',
+	// 	DOMNode: '#zone1-testB'
+	// }	
 ];
 var camp = new Campaign(series, {});
