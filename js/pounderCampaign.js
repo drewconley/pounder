@@ -2,16 +2,18 @@ var Campaign = function(series, options) {
 	base = this;
 
 	options = options || {};
-	options = options.delay || 500; //delay before starting the next in series.
+	delay = options.delay || 1000; //delay before starting the next in series.
 
 	var series_index = 0;
 
 	base.fireNext = function() {
 		
-		series_index+=1;		
-		if (series_index < series.length) {
-			fire();			
-		}
+		setTimeout( function() {
+			series_index+=1;		
+			if (series_index < series.length) {
+				fire();			
+			}
+		}, delay ) //wait before firing next in series
 	};
 
 	base.init = function() {

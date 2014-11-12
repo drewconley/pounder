@@ -28,7 +28,8 @@ var TestA = function(options) {
 	};
 
 	base.finished = function() {
-		console.log("FINISH! Fired " + requestcount + " requests in " + duration + " seconds.");		
+		console.log("FINISH! Fired " + requestcount + " requests in " + duration + " seconds.");
+		camp.fireNext();	
 	}
 
 	base.init = function() {

@@ -20,18 +20,32 @@ $(function() {
 
 
 var series = [
+	// {
+	// 	name: "App Fog | Node",
+	// 	model: 'TestB',
+	// 	duration: 600,
+	// 	domain: 'http://ffapi-node.uc01.clc.af.cm'
+	// },
+	// {
+	// 	name: "App Fog | PHP",
+	// 	model: 'TestB',
+	// 	duration: 600,		
+	// 	domain: 'http://ffapi.uc01.clc.af.cm'
+	// }
 	{
 		name: "App Fog | Node",
-		model: 'TestB',
-		duration: 600,
+		model: 'TestA',
+		duration: 6,
 		domain: 'http://ffapi-node.uc01.clc.af.cm'
 	},
 	{
-		name: "App Fog | Node #2",
-		model: 'TestB',
-		duration: 600,
-		domain: 'http://ffapi-node.uc01.clc.af.cm'
-		//domain: 'http://ffapi.uc01.clc.af.cm'
+		name: "App Fog | PHP",
+		model: 'TestA',
+		duration: 6,
+		domain: 'http://ffapi.uc01.clc.af.cm'
 	}
+
+
+
 ];
 var camp = new Campaign(series, {});
