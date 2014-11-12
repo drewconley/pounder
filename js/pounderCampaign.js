@@ -24,7 +24,7 @@ var Campaign = function(series, options) {
 
 	// module helpers
 	function fire() {
-		var trial = series[series_index];
+		var trial = series[series_index];	
 		console.log( "########### Begin: " + trial.name )		
 		eval( 'new '+trial.model+'(trial)');
 	};
