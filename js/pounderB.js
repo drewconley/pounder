@@ -11,6 +11,10 @@ var TestB = function(options) {
 	//Variables
 	var requestcount = 0;
 	var stop = false;
+	var responseTimes = [];
+
+
+
 
 
 	//local functions
@@ -23,7 +27,7 @@ var TestB = function(options) {
 	};
 
 
-	base.fireRequest = function() {
+	base.fireRequest = function(start_time) {
 
 		//get fresh URL
 		var url = lh.getProduct(domain);
@@ -31,16 +35,41 @@ var TestB = function(options) {
 		//if not been told to stop, fire the request
 		if (!stop) {
 
-			$.get(url).then(success, fail);
-				console.log("pounding");
+			console.log("pounding");				
+			$.get(url, {}, function(data, status, xhr) {							
+				xhr.done(function(d) {					
+					var request_time = new Date().getTime() - start_time;
+					console.log(d, request_time, start_time );
+
+					//get new Average
+					responseTimes.push( request_time );
+					base.calcAverageResponse();
+				})				
+			});		
 
 			//queue up the next fire
-			setTimeout(base.fireRequest, 10 );
+			setTimeout(function() {
+				base.fireRequest( new Date().getTime() );
+			}, 10 );
 
 		} else {
 			base.finished();
 		}
 	};
+
+	base.calcAverageResponse = function() {
+
+		var total = 0;
+		$.each(responseTimes, function() {
+		    total += this;
+		});		
+		var average = Math.round(total / responseTimes.length);
+		console.log(average);
+		
+		//update DOM
+		//$('#avgResponseTime').text(average);
+	};
+
 
 	base.finished = function() {		
 		camp.fireNext();
@@ -56,7 +85,7 @@ var TestB = function(options) {
 			console.log('reached time limit');
 		}, duration);
 
-		base.fireRequest();
+		base.fireRequest( new Date().getTime() );
 	};
 
 	base.init();	
