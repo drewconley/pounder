@@ -1,7 +1,14 @@
 var TestB = function(options) {
+
 	var base = this;	
 	var requestcount = 0;
 	var stop = false;
+
+	var options = options || {};
+	var domain = options.domain || 'http://stg.api.famousfootwear.com'; //default domain to hit
+
+	//use Link Helper
+	lh = new LinkHelper();
 
 	function success(d) {		
 		console.log(d);
@@ -16,7 +23,10 @@ var TestB = function(options) {
 	};
 
 	base.fireRequest = function() {
-		$.get('/test.json').then( success, fail );
+
+		var url = lh.getProduct(domain);
+		console.log("hitting: ", url);		
+		$.get(url).then( success, fail );
 	};
 
 	base.init = function() {

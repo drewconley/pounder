@@ -1,7 +1,8 @@
 var TestA = function(options) {
 	var base = this;
 
-	var duration = options.duration || 10;
+	var options = options || {};
+	var duration = options.duration || 10;	
 	var domain = options.domain || 'http://stg.api.famousfootwear.com'; //default domain to hit
 
 	var requestcount = 0;
@@ -18,7 +19,7 @@ var TestA = function(options) {
 		$.get(url, function(d) {
 			console.log(d);
 			requestcount += 1;
-			if (seconds <= options.duration)	 {						
+			if (seconds <= options.duration) {						
 				base.fireRequest()			
 			} else {
 				base.finished();

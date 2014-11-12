@@ -20,6 +20,7 @@ var LinkHelper = function() {
 
 };
 
+// Documentation. Add this to the readme:
 // var lh = new LinkHelper();
 // console.log( lh.getProduct('http://stg.api.famousfootwear.com') );
 // console.log( lh.getSizeAvailability('http://stg.api.famousfootwear.com') );
