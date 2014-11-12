@@ -14,19 +14,6 @@ var TestB = function(options) {
 	var responseTimes = [];
 
 
-
-
-
-	//local functions
-	function success(d) {				
-		console.log('success!');
-	};
-
-	function fail(d) {
-		console.log('fail', d);
-	};
-
-
 	base.fireRequest = function(start_time) {
 
 		//get fresh URL
@@ -35,12 +22,12 @@ var TestB = function(options) {
 		//if not been told to stop, fire the request
 		if (!stop) {
 
-			console.log("pounding");				
+			console.log("pounding", start_time);
+
 			$.get(url, {}, function(data, status, xhr) {							
 				xhr.done(function(d) {					
 					var request_time = new Date().getTime() - start_time;
-					//console.log(d, request_time, start_time );
-
+					
 					//get new Average
 					responseTimes.push( request_time );
 					base.calcAverageResponse();
@@ -61,10 +48,10 @@ var TestB = function(options) {
 
 		var total = 0;
 		$.each(responseTimes, function() {
-		    total += this;
+		    total += this;		
 		});		
 		var average = Math.round(total / responseTimes.length);
-		console.log(average)
+		
 
 		//update DOM	
 		$(options.DOMNode).find('.delay').text(average);
