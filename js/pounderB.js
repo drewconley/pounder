@@ -22,7 +22,7 @@ var TestB = function(options) {
 		//if not been told to stop, fire the request
 		if (!stop) {
 
-			console.log("pounding (B)", start_time);
+			console.log("pounding (B)");
 
 			$.get(url, {}, function(data, status, xhr) {							
 				xhr.done(function(d) {					

@@ -20,19 +20,19 @@
 
 
 var series = [
-
+	//ffapi.brownshoeinc.netdna-cdn.com
 	{
 		name: "Amazon Web A",
 		model: 'TestA',
-		duration: 60, //seconds
-		domain: 'http://ffapi.aws.af.cm',
+		duration: 10, //seconds
+		domain: 'http://ffapi.brownshoeinc.netdna-cdn.com',
 		DOMNode: '#zone2-testA'
-	},	
+	},
 	{
 		name: "Amazon Web B",
 		model: 'TestB',
-		duration: 10000,		
-		domain: 'http://ffapi.aws.af.cm',
+		duration: 60000,		
+		domain: 'http://ffapi.brownshoeinc.netdna-cdn.com',
 		DOMNode: '#zone2-testB'
 	}
 	// {

@@ -66,7 +66,7 @@ var TestA = function(options) {
 
 			
 			var countMs = function() {
-				if (seconds < 90) { //capping at 90s
+				if (seconds < 900) { //capping at 90s
 					seconds += 1;
 					setTimeout( countMs, 1000 );
 				} else {
